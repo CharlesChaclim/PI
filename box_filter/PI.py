@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 import math
 
 parser = ArgumentParser()
-parser.add_argument("-P", "--path", dest="path", default='../Imagens/Grayscale/67079.jpg', help="caminho da imagem")
+parser.add_argument("-P", "--path", dest="path", default='../Imagens/Grayscale/mary_small.png', help="caminho da imagem")
 parser.add_argument("-S", "--scale", dest="scale", default='5', help="valor da escala aplicada")
     
 args = parser.parse_args()
@@ -23,5 +23,6 @@ for i in range(0,image.shape[0]):
 FImage = np.array(np.reshape(lin,(image.shape[0],image.shape[1])), dtype=np.uint8)
 
 cv2.imshow('Box filter', FImage)
+cv2.imwrite("output.png", FImage)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
