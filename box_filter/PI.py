@@ -12,5 +12,10 @@ path = args.path
 image = cv2.imread(path, 1)
 cv2.imshow("Imagem Original", image)
 
+scale = int(args.scale)
+
+FImage = np.zeros((int(image.shape[1]/scale),int(image.shape[1]/scale)), np.uint64)
+print(FImage)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
